@@ -109,6 +109,27 @@ where a.naziv like 'spli%'
 group by b.naziv  
 order by brojmjesta desc;
 
+--- --- uprava svaštara d.o.o. je odlučila 2018
+--- 5 direktora svojih dobavljača odvesti
+--- na krstarenje. Koga čemo povesti? 
+--- u 2018 godini znaci moras stavit ---- where _______ between 'datum' and 'datum'
+
+select * from Dobavljaci
+select * from ArtikliNaPrimci
+
+select a.naziv, 
+sum(c.kolicina * c.cijena) as ukupno,
+min(c.kolicina * c.cijena) as minimalno,
+max(c.kolicina * c.cijena) as maksimalno
+from Dobavljaci a inner join Primke b
+on a.sifra = b.dobavljac
+inner join ArtikliNaPrimci c on b.sifra = c.primka
+where b.datum between '2017-01-01' and '2017-12-31'
+group by a.naziv
+having min(c.kolicina * c.cijena)>0    ----želim izbacit O u tablici minimum
+order by 3 desc, 2 desc;
+
+
 
 
 
