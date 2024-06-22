@@ -80,7 +80,34 @@ select grupe.naziv, count(clanovi.polaznik)
 from grupe inner join clanovi
 on grupe.sifra = clanovi.grupa
 group by grupe.naziv
+having count(clanovi.polaznik)>5;  ---pokazuje samo one grupe koje imaju vise od 5 polaznika
 
+---where filtrira one podatke koje je unio covjek, where ide na fizička imena
+---having filtrira agregirane podatke (podatki koji ne postoje direktno u bazi nek su stvoreni putem nekog izračuna cca.prosjek, ukupni broj...
+
+use svastara;
+---dobiti moramo sva mjesta u osjecko-baranskoj zupaniji
+select * from Mjesta
+select * from Opcine
+select * from Zupanije
+
+select c.naziv as mjesto, b.naziv as obcine, a.naziv as zupanija
+from Zupanije a inner join Opcine b
+on a.sifra = b.zupanija
+inner join Mjesta c on b.sifra = c.opcina
+where a.naziv like 'osje%'
+order by 1;
+
+-- koja občina u osječko-baranjskoj zupaniji ima najviše mjesta
+--- a = zupanija, b = opcine, c = mjesta
+
+select b.naziv as občine, count(c.sifra) as brojmjesta
+from Zupanije a inner join Opcine b
+on a.sifra = b.zupanija
+inner join Mjesta c on b.sifra = c.opcina
+where a.naziv like 'spli%'
+group by b.naziv  
+order by brojmjesta desc;
 
 
 
