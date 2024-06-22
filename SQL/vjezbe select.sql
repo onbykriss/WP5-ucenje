@@ -136,15 +136,63 @@ order by 3 desc, 2 desc;
 select * from Kupci
 select * from Mjesta
 
-select a.ime,a.prezime, b.naziv
+select distinct a.ime,a.prezime, b.naziv
 from kupci a inner join Mjesta b
 on a.mjesto = b.sifra
-where b.naziv = 'Split'
+where b.naziv in ('Osijek','Split')  ---kad žeim 2 mjesta ili dve informacije tad stavljam IN i u oklepaju ('') vejice zgoraj---
 order by a.prezime;
 
+----kad želim nesto jedinstbeno koje se ne ponavlja tad stavljam DISTINCT
+select distinct a.ime
+from kupci a inner join Mjesta b
+on a.mjesto = b.sifra
+where b.naziv = 'Osijek'
+order by a.ime;
+
+--Idete u svatove i planirate kupiti poklon
+---u rasponu 1000-1100 eura, koliko artikala možete kupiti?
+
+select * from Artikli where cijena between 1000 and 1100
+order by 6 desc;
 
 
+select count(jedinicaMjere) from Artikli
+where cijena between 1000 and 1100
 
+
+select count(*) from Artikli; ---vsi artikli u bazi
+
+---kad zelis nac iglu u sjeni artikala....
+select distinct artikl from ArtikliNaPrimci;  
+select * from Artikli where
+sifra not in (select distinct artikl from ArtikliNaPrimci);
+
+
+---unesi sebe kao kupca 
+select * from Kupci
+insert into Kupci (ime, jmbg, prezime, adresa, mjesto)
+values ('Kristina','1254325425412','Andric','Loleka 3',10000)
+
+
+select * from Kupci
+where mjesto = 10000
+order by 1;
+
+---ispisite nazive mjesta u rh koji imaju iste nazive s
+----s pripadajucim brojem ponavljanja
+----count(*) znaci brojanje 
+
+select naziv, count(*) from Mjesta   ----izaberi naziv i broji u tablici mjesta
+group by naziv having count(*)>1  ----grupiraj prema nazivu i broji sve sto je veče od 1
+order by 2 desc;
+ 
+ select ime, count(*) as ponavljanja from Kupci
+ group by ime having count(*)>1
+ order by 2 desc;
+
+ select naziv, count(*) from Proizvodi
+ group by naziv having count(*)>1
+ order by 2 desc;
 
 
 
