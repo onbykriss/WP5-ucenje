@@ -117,7 +117,7 @@ order by brojmjesta desc;
 select * from Dobavljaci
 select * from ArtikliNaPrimci
 
-select a.naziv, 
+select top 5 a.naziv, 
 sum(c.kolicina * c.cijena) as ukupno,
 min(c.kolicina * c.cijena) as minimalno,
 max(c.kolicina * c.cijena) as maksimalno
@@ -128,6 +128,22 @@ where b.datum between '2017-01-01' and '2017-12-31'
 group by a.naziv
 having min(c.kolicina * c.cijena)>0    ----želim izbacit O u tablici minimum
 order by 3 desc, 2 desc;
+
+---kupci i mjesta-----u tablici kupci ima zapis od kdje dolazi kupac ime mjesta.......znaci mozemo nadograditi vanski kljuc
+---izlistajte imena i prezimena kupaca koji 
+---dolaze iz mjesta u kojem vi živite
+
+select * from Kupci
+select * from Mjesta
+
+select a.ime,a.prezime, b.naziv
+from kupci a inner join Mjesta b
+on a.mjesto = b.sifra
+where b.naziv = 'Split'
+order by a.prezime;
+
+
+
 
 
 
