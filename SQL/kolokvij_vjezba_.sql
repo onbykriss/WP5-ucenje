@@ -176,3 +176,33 @@ inner join svekar f on e.svekar = f.sifra
 where c.hlace like 'a%' and d.haljina like '%ba'
 order by b.hlace desc;
 
+
+SELECT 
+    f.dukserica,
+    a.asocialno,
+    b.hlace
+FROM 
+    svekar f
+INNER JOIN 
+    mladic a ON f.id_mladih = a.id_mladog -- Assuming there's a relationship between svekar and mladic
+INNER JOIN 
+    muskarac b ON a.muskarac = b.sifra
+INNER JOIN 
+    zena c ON b.zena = c.sifra AND c.hlace LIKE 'a%'
+INNER JOIN 
+    sestra d ON c.sestra = d.sifra AND d.haljina LIKE '%ba%'
+ORDER BY 
+    b.hlace DESC;
+
+
+select f.dukserica, a.asocialno, b.hlace
+from svekar f
+inner join muskarac b on EXISTS (SELECT 1 FROM zena c WHERE b.zena = c.sifra AND c.hlace LIKE 'a%')
+INNER JOIN 
+    mladic a ON EXISTS (
+        SELECT 1 FROM sestra d WHERE EXISTS (
+            SELECT 1 FROM zena c WHERE d.sestra = c.sifra AND c.hlace LIKE 'a%'
+        ) AND d.haljina LIKE '%ba%'
+    )
+ORDER BY 
+    b.hlace DESC;
