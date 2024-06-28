@@ -76,7 +76,6 @@ namespace UcenjeCS
             i--;
             --i;
 
-
             //prekrasni zadaci
             int x = 0, y = 1;
             x = ++x - y;  // x = 1, y = 1
@@ -94,7 +93,6 @@ namespace UcenjeCS
 
             x = 5;
             y = 2;
-
 
             // int / int daje int
             // mora se raditi cast
