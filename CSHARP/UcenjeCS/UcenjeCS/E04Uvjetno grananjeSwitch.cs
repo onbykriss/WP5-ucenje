@@ -11,7 +11,7 @@ namespace UcenjeCS
 
         public static void Izvedi()
         {
-            // switch je višestrukno grananje
+            // switch je višestrukno grananje 
 
             int i = 0;
 
@@ -27,25 +27,32 @@ namespace UcenjeCS
                 case 2:
                     Console.WriteLine("Zao");
                     break;
-                default:
+                default:    // to je sve ostale vrijednosti
                     Console.WriteLine("Ostalo");
                     break;
 
-
-                    // switch rasi s int, string, char i drugi 
-                    //csharp switch doc  potrazi na internetu
-
-                    char znak = 'T';
-                    Console.WriteLine(znak);
-                    Console.WriteLine((int)znak);
-
-
-
-
-
-            
             }
-        
+                    // switch radi s int, string, char i drugi 
+                    // csharp switch doc  potrazi na internetu
+
+
+                    //float f=4;
+
+                    //switch (f)
+                    //{
+                    //    case 2.8:
+                    //        Console.WriteLine("OK");
+                    //}
+
+
+            char znak = '@';
+            Console.WriteLine(znak);
+            Console.WriteLine((int)znak);
+
+
+
+
+
         }
     }
 }

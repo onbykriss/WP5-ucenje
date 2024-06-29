@@ -91,19 +91,31 @@ namespace UcenjeCS
             // if se može gnjezditi
             if (x == 3)
             {
-              int k = 9;
+              //int k = 9;  //ova če bit deklarirana samo ako je if (X==3)
                 if (i > 0)
                 {
                  Console.WriteLine("Zadovoljeno");
                 }
                 else 
                 {
-
                  Console.WriteLine("NE");
                 }
-                // preduvjet je da if i else provode istu akciju - u ovom slučaju cw
+                
+                // inline IF - tercijarni operator?
+                x = 0;
+                if (x == 0)
+                {
+                    Console.WriteLine("OK");
+                }
+                else 
+                {
+                    Console.WriteLine("NE");
+                }
+
+                // preduvjet je da if i else provode istu akciju - u ovom slučaju consolewriteline
                
-                Console.WriteLine(x == 0 ? "OK" : "NE");
+                Console.WriteLine(x == 0 ? "OK" : "NE");  // prvo stavimo vrijednost onda ? i onda true : false
+
 
 
 

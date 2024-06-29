@@ -9,11 +9,6 @@ namespace UcenjeCS
     internal class E01UlazIzlaz() 
     {
 
-
-
-
-
-
         public static void Izvedi()
         {
 

@@ -1,10 +1,16 @@
 ﻿using UcenjeCS;
 
-// E04Uvjetno_grananjeSwitch.Izvedi();
+E04Z1.Izvedi();
+
+//E04Uvjetno_grananjeSwitch.Izvedi();
+
+// E03Z3.Izvedi();
+
+// E03Z2.Izvedi();
 
 // E03Z1.Izvedi();
 
-E03UvjetnoGrananjeIf.Izvedi();
+// E03UvjetnoGrananjeIf.Izvedi();
 
 // E02VarijableTipoviPodataka.Izvedi();
 
