@@ -1,6 +1,10 @@
 ﻿using UcenjeCS;
 
-E04Z1.Izvedi();
+E06ForPetlja.Izvedi();
+
+//E05Nizovi.Izvedi();
+
+//E04Z1.Izvedi();
 
 //E04Uvjetno_grananjeSwitch.Izvedi();
 
@@ -27,3 +31,4 @@ E04Z1.Izvedi();
 //*
 //Komentar kroz vise linija
 //*/
+//
