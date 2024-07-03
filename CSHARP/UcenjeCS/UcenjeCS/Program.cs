@@ -1,10 +1,12 @@
 ﻿using UcenjeCS;
 
-E06ForPetlja.Izvedi();
+vjezbanje.Izvedi();
+
+//E06ForPetlja.Izvedi();
 
 //E05Nizovi.Izvedi();
 
-//E04Z1.Izvedi();
+// E04Z1.Izvedi();
 
 //E04Uvjetno_grananjeSwitch.Izvedi();
 

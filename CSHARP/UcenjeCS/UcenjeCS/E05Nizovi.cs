@@ -9,43 +9,53 @@ namespace UcenjeCS
     internal class E05Nizovi
     {
         public static void Izvedi() 
-        { 
+        {
 
             // motivacija: treba ti 12 variabli za 12 temperatura različitih mjeseci
-            //ono što znamo
+            // ono što znamo
             // int temp1, temp2, temp3, temp4; // ovo je loše rešenje
 
-            // OVO SU SVE JEDNODIMENZIONALNI NIZOVI
 
             // eng. Arrays (znači niz informacija)
-            // još na HR polja
+            // hr. Polja
 
-            int[] temperature = new int[12];  // največi problem nizova što je na
-                                              // početku moram znati broj nizova
+            // OVO SU SVE JEDNODIMENZIONALNI NIZOVI
+            // [ AltGr + F 
 
-            // nizovi počinju s indexom 0
-            // 1. element niza je na indexu 0
-            temperature[0] = -2; // siječanj
-            temperature[1] = 0;
-            //..
-            temperature[11] = -3; // prosinac
-            // dužina niza
-            Console.WriteLine(temperature.Length); // ukupan broj elemenata
+            // definicija niza :
+            int[] temperature = new int[12];  // največi problem nizova je što na početku moram znati broj nizova
 
-            // zadnji se u pravilu ovako postavlja
-            temperature[temperature.Length - 1 ] = 0;
+          // nizovi počinju s indexom 0
+          // 1. element niza je na indexu 0
 
-            Console.WriteLine(temperature[1]); // 0
+          temperature[0] = -2;   // januar (0)
+          temperature[1] = 0;
+          //...
+          temperature[11] = -3;  // december (11)
+            
+          // dužina niza (Lenght)
+          Console.WriteLine(temperature.Length);    // ukupan broj elemenata
 
-            // temperature[12] = 1;  greška prilikom izvođenja
+                  // zadnji se u pravilu ovako postavlja
+                  temperature[temperature.Length - 1 ] = 0;   // napravili smo da zadnji element u nizu ima vrijednost 0
+                                                              // (program čita 5,4,3,2,1 = i ta zadnji je 0)
+                                                              // stavis 3 bit če na 3 mjestu vrijdnost 0 (70, 72, 0 , 125, 76)
+            Console.WriteLine("**************************************************************");
 
-            Console.WriteLine(temperature);
+            Console.WriteLine(temperature[1]);   // njegova vrijedost je 0
 
-            // ispisati sve elemente niza
+            /////// temperature[12] = 1;  greška prilikom izvođenja jer niz ide od 0 do 11
+
+            Console.WriteLine(temperature);  // ispisuje:  System.Int32[] writeline nezna kako prikazati temperature pa stavi napis ...
+
+            Console.WriteLine("**************************************************************");
+
+            // ispisati sve elemente niza u jednom redu
             Console.WriteLine(string.Join(",",temperature));
 
-            // skračeniji način
+            Console.WriteLine("**************************************************************");
 
+            // skračeniji način
             int[] niz = { 2, 3, 4, 5, 56, 6, 3, 3 };
 
             // ispisati 56

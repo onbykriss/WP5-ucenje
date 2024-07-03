@@ -21,7 +21,7 @@ namespace UcenjeCS
 
             for (int i = 0; i < 10; i = i + 1)
             {
-                Console.WriteLine("*********************");
+                Console.WriteLine("*************************************+****");
 
             }
 
@@ -32,7 +32,7 @@ namespace UcenjeCS
                 Console.WriteLine(i+1);
             }
 
-            Console.WriteLine("****************************");
+            Console.WriteLine("************************************************");
             int suma = 0;
             // korištenje vrijednosti u petlji
             for (int i = 0; i <= 100; i++) 
@@ -41,17 +41,16 @@ namespace UcenjeCS
             }
             Console.WriteLine(suma);
 
-            Console.WriteLine("****************************");
+            Console.WriteLine("**********************************************+**");
 
             // ispisati sve parne brojeve od 1 do 50
             // loš način
             for (int i = 2; i <= 50; i += 2)
             {
-
                 Console.WriteLine(i);
             }
-            Console.WriteLine("*************************************");
 
+            Console.WriteLine("**************************************************");
 
             // dobar način
             for (int i = 1; i <= 50; i++)
@@ -62,7 +61,7 @@ namespace UcenjeCS
                 }
 
             }
-            Console.WriteLine("*************************************");
+            Console.WriteLine("***************************************************");
 
             int brojOd = 12;
             int brojDo = 2;
@@ -72,7 +71,7 @@ namespace UcenjeCS
                 Console.WriteLine(i);
             }
 
-            Console.WriteLine("***************************+");
+            Console.WriteLine("************************************************+");
 
             int[] niz = {2,3,4,5,4,3};
 
@@ -86,12 +85,12 @@ namespace UcenjeCS
                  
             }
 
-            Console.WriteLine("***************************+");
+            Console.WriteLine("******************************************+***+");
 
             int[,] tablica = {
             {1, 2, 3 }, // DZ 6 i 9 moraju biti ispod 0 od 30
             {4, 5, 6},
-            {7, 8, 9}
+            {700, 8, 9}
             };
 
 
@@ -99,25 +98,25 @@ namespace UcenjeCS
             {
                 for(int j = 0; j < tablica.GetLength(1); j++)
                 {
-                    Console.Write(tablica[i,j] + " ");
+                    Console.Write(String.Format("{0,3}",tablica[i,j]) + " ");
                 }
                 Console.WriteLine();
 
             }
 
-            Console.WriteLine("***************************+");
+            Console.WriteLine("************************************************+");
 
             // tablica množenja   - DZ lijepo formatirati
             for (int i = 0;i < 10; i++)
             {
                 for (int j = 0;j < 10; j++)
                 {
-                    Console.Write((i+1)*(j+1) + " ");
+                    Console.Write(String.Format("{0,3}",(i+1)*(j+1)) + " ");
                 }
                 Console.WriteLine();
             }
 
-            Console.WriteLine("***************************+");
+            Console.WriteLine("*************************************************");
 
             // petlja se može preskočiti (nastaviti) i nasilno prekuniti
 
@@ -137,7 +136,7 @@ namespace UcenjeCS
 
             }
 
-            Console.WriteLine("***************************");
+            Console.WriteLine("**************************************************");
 
             for(int i = 0; i < 10; i++)
             {
