@@ -19,6 +19,8 @@ namespace UcenjeCS
             
             Console.WriteLine(uvjet);
 
+            Console.WriteLine("*************************************************************+");
+
             // IF radi s BOOL tipom podataka znači TRUE ili FALSE ( u nasem primjeru je i=8)
             // drugi primjer i = 7 znači ispisat če FALSE
 
@@ -48,6 +50,8 @@ namespace UcenjeCS
              Console.WriteLine("i nije veči od 10");      
             }
 
+            Console.WriteLine("*************************************************************+");
+
             // if ne mora imati {} ako se if ili else odnose samo na jednu linija
             // ovo nije najbolja praksa. Primjer dole!
 
@@ -71,11 +75,13 @@ namespace UcenjeCS
              Console.WriteLine("Ostalo"); //Ako je vrjednost svi ostali brojevi onda ulazi u "Ostalo" fazu
             }
 
+            Console.WriteLine("*************************************************************+");
+
             // operatori & i && (END I ENDEND) "AND"   Ujek upotrebljavamo 2 &&
             // & uvjet provjerava oba uvjeta
             // && koliko 1. uvjet nije zadovoljen, drugi se niti ne gleda
             int x = 2, y = 1;
-            if (x == 1 && y == 1)  // x = FALSE  (ako je x = 2 iči če napred provjeravat i drugi kod)
+            if (x == 1 && y == 1)  // x = FALSE  (ako je x = 1 iči če napred provjeravat i drugi kod)
             { 
              Console.WriteLine("x i y su 1");
             }
@@ -88,10 +94,12 @@ namespace UcenjeCS
              Console.WriteLine("ako je prvi uvjet zadovoljen ulazi se u if");
             }
 
+            Console.WriteLine("*************************************************************+");
+
             // if se može gnjezditi
             if (x == 3)
             {
-              //int k = 9;  //ova če bit deklarirana samo ako je if (X==3)
+                //int k = 9;  //ova če bit deklarirana samo ako je if (X==3)
                 if (i > 0)
                 {
                  Console.WriteLine("Zadovoljeno");
@@ -100,7 +108,9 @@ namespace UcenjeCS
                 {
                  Console.WriteLine("NE");
                 }
-                
+
+                Console.WriteLine("*************************************************************+");
+
                 // inline IF - tercijarni operator?
                 x = 0;
                 if (x == 0)

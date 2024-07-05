@@ -36,27 +36,28 @@ namespace UcenjeCS
 
             Console.WriteLine(broj+1);
 
+            Console.WriteLine("**********************************************************");
             // za decimalne brojeve čemo koristiti Float
 
             Console.WriteLine("Unesi decimalni broj (, je oznaka za decimalni broj): ");
-
             Console.WriteLine(float.Parse(Console.ReadLine())+1);
-
-
             bool uvjet = false;
-
             Console.WriteLine(uvjet);
+            
+            Console.WriteLine("**********************************************************");
 
             // operatori za rad s verijablama
             // =,+,-,*,/
             // == operator uspoređivanja, tipa bool
-            // != različito, tipo bool
+            // != različito, tipa bool
 
 
             int j = 3;
 
-            Console.WriteLine(j==3);
-            Console.WriteLine(j!= 6);
+            Console.WriteLine(j==3);  // == operator uspoređivanja, tipa bool
+            Console.WriteLine(j!= 6);  // != različito, tipa bool
+
+            Console.WriteLine("**********************************************************");
 
             // increment i dekrement
 
@@ -78,10 +79,11 @@ namespace UcenjeCS
 
             //prekrasni zadaci
             int x = 0, y = 1;
-            x = ++x - y;  // x = 1, y = 1
+            x = ++x - y;  // x = 0, y = 1
             y = x-- + y;  // x = -1, y = 1
             Console.WriteLine(x + y);  // 0
 
+            Console.WriteLine("**********************************************************");
 
             // prvo na početku dvosatnog vježbanja doma si zadati zadatak
             // na kraju dvosatnog vježbanja riješiti ga

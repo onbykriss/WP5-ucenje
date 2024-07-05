@@ -1,24 +1,24 @@
 ﻿using UcenjeCS;
 
-vjezbanje.Izvedi();
+// vjezbanje.Izvedi();
 
-//E10TryCatch.Izvedi();
+// E10TryCatch.Izvedi();
 
-//E09ForeachPetlja.Izvedi();
+// E09ForeachPetlja.Izvedi();
 
-//E08DoWhilePetlja.Izvedi();
+// E08DoWhilePetlja.Izvedi();
 
-//E07Z1.Izvedi();
+// E07Z1.Izvedi();
 
-//E07WhilePetlja.Izvedi();
+// E07WhilePetlja.Izvedi();
 
-//E06ForPetlja.Izvedi();
+// E06ForPetlja.Izvedi();
 
-//E05Nizovi.Izvedi();
+// E05Nizovi.Izvedi();
 
 // E04Z1.Izvedi();
 
-//E04Uvjetno_grananjeSwitch.Izvedi();
+// E04Uvjetno_grananjeSwitch.Izvedi();
 
 // E03Z3.Izvedi();
 
@@ -26,7 +26,7 @@ vjezbanje.Izvedi();
 
 // E03Z1.Izvedi();
 
-// E03UvjetnoGrananjeIf.Izvedi();
+E03UvjetnoGrananjeIf.Izvedi();
 
 // E02VarijableTipoviPodataka.Izvedi();
 
