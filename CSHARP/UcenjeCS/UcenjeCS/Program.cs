@@ -26,12 +26,27 @@
 
 // E03Z1.Izvedi();
 
-E03UvjetnoGrananjeIf.Izvedi();
+// E03UvjetnoGrananjeIf.Izvedi();
 
 // E02VarijableTipoviPodataka.Izvedi();
 
 // E01UlazIzlaz.Izvedi();
 
+//E01Z1.Izvedi();
+
+//E01Z2.Izvedi();
+
+//E01Z3.Izvedi();
+
+//E03Z4.Izvedi();
+
+//E07Z2.Izvedi();
+
+//E0501.Izvedi();
+
+//E06Z1.Izvedi();
+
+E01Z4.Izvedi();
 
 
 
