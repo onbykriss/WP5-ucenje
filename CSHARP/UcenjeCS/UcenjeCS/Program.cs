@@ -2,7 +2,15 @@
 
 // vjezbanje.Izvedi();
 
-// E10TryCatch.Izvedi();
+//E10TryCatch.Izvedi();
+
+//E11Metode.Izvedi();
+
+//E11Z1.Izvedi();
+
+//E12Rekurzija.Izvedi();
+
+//E11Metode.Tip1(); // ne vidimo metode je jer je privat
 
 // E09ForeachPetlja.Izvedi();
 
@@ -46,7 +54,7 @@
 
 //E06Z1.Izvedi();
 
-E01Z4.Izvedi();
+//E01Z4.Izvedi();
 
 
 
