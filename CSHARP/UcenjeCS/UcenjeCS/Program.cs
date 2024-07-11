@@ -10,6 +10,10 @@
 
 //E12Rekurzija.Izvedi();
 
+
+
+E13Vjezbanje.Izvedi();
+
 //E11Metode.Tip1(); // ne vidimo metode je jer je privat
 
 // E09ForeachPetlja.Izvedi();
