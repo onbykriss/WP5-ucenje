@@ -1,9 +1,8 @@
 ﻿using System;
 
-
 namespace ZavrsniRad
 {
-    public class Najmovi : OsnovnaKlasa
+    public class Najam : OsnovnaKlasa
     {
         public int IdStanovi { get; set; }
         public int IdZakupci { get; set; }
@@ -11,8 +10,8 @@ namespace ZavrsniRad
         public DateTime DatumZavrsetka { get; set; }
         public decimal CijenaNajma { get; set; }
 
-        public Najmovi(int idNajmovi, int idStanovi, int idZakupci, DateTime datumPocetka, DateTime datumZavrsetka, decimal cijenaNajma)
-            : base(idNajmovi)
+        public Najam(int id, int idStanovi, int idZakupci, DateTime datumPocetka, DateTime datumZavrsetka, decimal cijenaNajma)
+            : base(id)
         {
             IdStanovi = idStanovi;
             IdZakupci = idZakupci;
@@ -21,9 +20,18 @@ namespace ZavrsniRad
             CijenaNajma = cijenaNajma;
         }
 
+        public Najam() : base()
+        {
+            IdStanovi = 0;
+            IdZakupci = 0;
+            DatumPocetka = DateTime.MinValue;
+            DatumZavrsetka = DateTime.MinValue;
+            CijenaNajma = 0;
+        }
+
         public override string ToString()
         {
-            return $"{base.ToString()}, Stan ID: {IdStanovi}, Zakupac ID: {IdZakupci}, Datum Pocetka: {DatumPocetka:yyyy-MM-dd}, Datum Završetka: {DatumZavrsetka:yyyy-MM-dd}, Cijena Najma: {CijenaNajma:C}";
+            return $"{base.ToString()}, IdStanovi: {IdStanovi}, IdZakupci: {IdZakupci}, DatumPocetka: {DatumPocetka.ToShortDateString()}, DatumZavrsetka: {DatumZavrsetka.ToShortDateString()}, CijenaNajma: {CijenaNajma:C}";
         }
     }
 }

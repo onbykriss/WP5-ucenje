@@ -1,43 +1,19 @@
 ﻿using System;
 
-
 namespace ZavrsniRad
 {
-    internal class Zadatak
+    public class Zadatak
     {
-
-        /*
-         * 
-         * Kreirati klase prema ERA dijagramu Vaše baze podataka
-         * Implementirati nasljeđivanje i prepisati metodu ToString
-         * 
-         * Za svaku klasu napraviti po jedan konstruktor
-         * 
-         * Svaku klasu instancirati u ovoj klasu
-         * 
-         */
+        public Stan Stan { get; set; }
+        public Zakupac Zakupac { get; set; }
+        public Najam Najam { get; set; }
 
         public Zadatak()
         {
-            //ovdje instancirati svaku kreiranu klasu jednom i dodjeliti svim svojstvima vrijednosti
+            // Inicializacija vsakega razreda z nekaterimi vrednostmi
+            Stan = new Stan(1, 50, "Zell am See", "kuhinja, spavaonica, wc, terasa", "slika.jpg");
+            Zakupac = new Zakupac(1, "Kristina", "Andric", "fashionbykriss@gmail.com", "031511271");
+            Najam = new Najam(1, 1, 1, new DateTime(2024, 2, 7), new DateTime(2024, 2, 28), 1560);
         }
-
-        public class OsnovnaKlasa
-        {
-            public int Id { get; set; }
-
-            public OsnovnaKlasa(int id)
-            {
-                Id = id;
-            }
-
-            public override string ToString()
-            {
-                return $"ID: {Id}";
-            }
-        }
-
-
-
     }
 }

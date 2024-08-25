@@ -4,19 +4,24 @@ namespace ZavrsniRad
 {
     public class OsnovnaKlasa
     {
-        
-            public int Id { get; set; }
+        public int Id { get; set; }
 
-            public OsnovnaKlasa(int id)
-            {
-                Id = id;
-            }
+        // Konstruktor sa svim parametrima
+        public OsnovnaKlasa(int id)
+        {
+            Id = id;
+        }
 
-            public override string ToString()
-            {
-                return $"ID: {Id}";
-            }
+        // Konstruktor brez parametara
+        public OsnovnaKlasa()
+        {
+        }
+
+        // Metoda ToString
+        public override string ToString()
+        {
+            return $"ID: {Id}";
+        }
     }
 }
-
 
