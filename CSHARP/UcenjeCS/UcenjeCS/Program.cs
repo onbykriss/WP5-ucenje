@@ -1,6 +1,12 @@
 ﻿using UcenjeCS;
 
-// vjezbanje.Izvedi();
+//UcenjeCS.E15KlasaObjekt.Program.Izvedi();
+
+new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
+
+//UcenjeCS.E15KlasaObjekt.Program.Izvedi();
+
+//vjezbanje.Izvedi();
 
 //E10TryCatch.Izvedi();
 
@@ -12,7 +18,7 @@
 
 
 
-E13Vjezbanje.Izvedi();
+//E13Vjezbanje.Izvedi();
 
 //E11Metode.Tip1(); // ne vidimo metode je jer je privat
 
