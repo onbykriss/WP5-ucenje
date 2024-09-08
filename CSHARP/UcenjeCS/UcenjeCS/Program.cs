@@ -1,5 +1,7 @@
 ﻿using UcenjeCS;
 
+new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
+
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();
 
 //new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
@@ -16,7 +18,7 @@
 
 //E12Rekurzija.Izvedi();
 
-
+//E17GenericiLambdaEkstenzije.Program.Izvedi();
 
 //E13Vjezbanje.Izvedi();
 
