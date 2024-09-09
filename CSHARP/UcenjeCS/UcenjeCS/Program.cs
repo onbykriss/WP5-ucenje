@@ -1,6 +1,8 @@
 ﻿using UcenjeCS;
 
-new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
+//new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
+
+//new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
 
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();
 
@@ -8,7 +10,10 @@ new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
 
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();
 
-//vjezbanje.Izvedi();
+//UcenjeCS.Vjezbanje.Izvedi();
+
+
+UcenjeCS.E14LjetniZadaci.Main();
 
 //E10TryCatch.Izvedi();
 
@@ -67,8 +72,6 @@ new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
 //E06Z1.Izvedi();
 
 //E01Z4.Izvedi();
-
-
 
 //See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, Edunova!");
