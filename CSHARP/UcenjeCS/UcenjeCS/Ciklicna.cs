@@ -1,43 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UcenjeCS
 {
-    internal class Ciklična
+    internal class Ciklicna
     {
-        //Ljetni zadaci:
-        //Ciklična matrica
-        //Napraviti osnovni zadatak prema inicijalnoj slici
-        //Dodatno:
-        //Osigurati unos brojeva redova i kolona u rasponu 2 do 50
-        //Napraviti da nakon završetka generiranja jedne matrice pita želite li napraviti još jednu i tako sve dok ne unese NE
-        //Napraviti opcije programa o smjeru kretanja brojeva:
-        //1. dolje lijevo početak u smjeru kazaljke na satu (inicijalni zadatak)
-        //2. dolje desno početak u smjeru kazaljke na satu
-        //3. gore lijevo početak u smjeru kazaljke na satu
-        //4. gore desno početak u kontra smjeru kazaljke na satu
-        //5. dolje lijevo početak u kontra smjeru kazaljke na satu 
-        //6. dolje desno početak u kontra smjeru kazaljke na satu
-        //7. gore lijevo početak u kontra smjeru kazaljke na satu
-        //8. gore desno početak u kontra smjeru kazaljke na satu
-        //9. sredina (ono što je bio kraj u prvih 8 primjera) lijevo u smjeru kazaljke na satu
-        //10. sredina (ono što je bio kraj u prvih 8 primjera) desno u smjeru kazaljke na satu
-        //11. sredina (ono što je bio kraj u prvih 8 primjera) gore u smjeru kazaljke na satu
-        //12. sredina (ono što je bio kraj u prvih 8 primjera) dolje u smjeru kazaljke na satu
-        //13. sredina (ono što je bio kraj u prvih 8 primjera) lijevo u kontra smjeru kazaljke na satu
-        //14. sredina (ono što je bio kraj u prvih 8 primjera) desno u kontra smjeru kazaljke na satu
-        //15. sredina (ono što je bio kraj u prvih 8 primjera) gore u kontra smjeru kazaljke na satu
-        //16. sredina (ono što je bio kraj u prvih 8 primjera) dolje u kontra smjeru kazaljke na satu
-
-        //Formatirati brojeve da budu potpisati po pravilima matematike: jedinica ispod jedinice, desetica ispod desetice, stotica ispod stotice
-
-
-
-        public static void Main()
+        public static void Izvedi()
         {
+
+
+
+
+
+
+
+
+
+
+
+
+
             do
             {
                 Console.WriteLine("Unesite broj redova (2-50): ");
@@ -54,7 +35,6 @@ namespace UcenjeCS
                 Console.WriteLine("6. Dolje desno - kontra smjer kazaljke na satu");
                 Console.WriteLine("7. Gore lijevo - kontra smjer kazaljke na satu");
                 Console.WriteLine("8. Gore desno - kontra smjer kazaljke na satu");
-                //Console.WriteLine("9. Opcija s početkom iz sredine");
 
                 int opcija = UnosBroja(1, 8); // Za sada koristimo prvih 8 opcija.
 
@@ -73,7 +53,7 @@ namespace UcenjeCS
             int broj;
             while (!int.TryParse(Console.ReadLine(), out broj) || broj < min || broj > max)
             {
-                Console.WriteLine($"Unesite broj između {min} i {max}:");
+                Console.WriteLine($"Unesite broj između {min} in {max}:");
             }
             return broj;
         }
@@ -388,12 +368,5 @@ namespace UcenjeCS
                 Console.WriteLine();
             }
         }
-
-
-
-
-
-
-
     }
 }
