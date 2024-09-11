@@ -12,8 +12,9 @@
 
 //UcenjeCS.Vjezbanje.Izvedi();
 
+//UcenjeCS.Ciklična.Izvedi();
 
-UcenjeCS.E14LjetniZadaci.Main();
+//UcenjeCS.E14LjetniZadaci.();
 
 //E10TryCatch.Izvedi();
 
