@@ -12,9 +12,14 @@
 
 //UcenjeCS.Vjezbanje.Izvedi();
 
-//UcenjeCS.Ciklična.Izvedi();
+//new Ciklicna.Izvedi();
 
-//UcenjeCS.E14LjetniZadaci.();
+//new LjubavniKalkulator.Program();
+
+//E14LjetniZadaci2.Izvedi();
+
+GeneratorLozinki.Izvedi();
+
 
 //E10TryCatch.Izvedi();
 
