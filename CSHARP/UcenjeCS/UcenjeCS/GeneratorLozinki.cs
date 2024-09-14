@@ -9,20 +9,6 @@ namespace UcenjeCS
     public class GeneratorLozinki 
     {
 
-        //Generator lozinki
-        //Program od korisnika traži unos podataka:
-        //Dužina lozinke
-        //Uključena/isključena velika slova
-        //Uključena/isključena mala slova
-        //Uključeni/isključeni brojevi
-        //Uključeni/isključeni interpunkcijski znakovi
-        //Lozinka počinje ili ne s brojem
-        //Lozinka počinje ili ne s interpunkcijskim znakom
-        //Lozinka završava ili ne s brojem
-        //Lozinka završava ili ne s interpunkcijskim znakom
-        //Lozinka ima/nema ponavljajuće znakove
-        //Broj lozinki koje je potrebno generirati
-
         public static void Izvedi()
         {
             Console.WriteLine("Unesite dužinu lozinke:");
