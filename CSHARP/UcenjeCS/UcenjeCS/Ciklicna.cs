@@ -8,17 +8,6 @@ namespace UcenjeCS
         {
 
 
-
-
-
-
-
-
-
-
-
-
-
             do
             {
                 Console.WriteLine("Unesite broj redova (2-50): ");
@@ -353,19 +342,17 @@ namespace UcenjeCS
             }
         }
 
-        // Metoda za ispisivanje matrice s formatiranjem  
+        // Metoda za ispisivanje matrice s formatiranjem na 3 znamenke s praznim mjestima
         static void IspisiMatricu(int[,] matrix)
         {
-            int maxBroj = matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-            int maxWidth = maxBroj.ToString().Length;
-
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i, j].ToString().PadLeft(maxWidth) + " ");
+                    // Formatiraj broj na 3 znaka, koristeći razmake za popunjavanje
+                    Console.Write(matrix[i, j].ToString().PadLeft(3, ' ') + " ");
                 }
-                Console.WriteLine();
+                Console.WriteLine(); // Prelazak u novi red nakon svake iteracije kroz kolone
             }
         }
     }

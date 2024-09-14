@@ -12,13 +12,13 @@
 
 //UcenjeCS.Vjezbanje.Izvedi();
 
-//new Ciklicna.Izvedi();
+Ciklicna.Izvedi();
 
 //new LjubavniKalkulator.Program();
 
 //E14LjetniZadaci2.Izvedi();
 
-GeneratorLozinki.Izvedi();
+//GeneratorLozinki.Izvedi();
 
 
 //E10TryCatch.Izvedi();
