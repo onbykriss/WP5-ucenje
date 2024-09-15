@@ -87,8 +87,6 @@ namespace UcenjeCS.E18KonzolnaAplikacija
 
             // polaznici
             g.Polaznici = UcitajPolaznike((int)g.MaksimalnoPolaznika);
-
-
         }
 
         private void PrikaziGrupe()
@@ -151,9 +149,7 @@ namespace UcenjeCS.E18KonzolnaAplikacija
                 {
                     lista.Add(Izbornik.ObradaPolaznik.Polaznici[odabranaOpcija]);
                 }
-
             }
-
             return lista;
         }
     }

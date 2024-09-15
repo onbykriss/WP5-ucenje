@@ -7,6 +7,5 @@
         public string? Predavac { get; set; }
         public int? MaksimalnoPolaznika { get; set; }
         public List<Polaznik>? Polaznici { get; set; }
-
     }
 }
