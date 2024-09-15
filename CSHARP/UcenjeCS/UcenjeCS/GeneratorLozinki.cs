@@ -57,7 +57,7 @@ namespace UcenjeCS
             StringBuilder lozinka = new StringBuilder();
             Random random = new Random();
 
-            // Ustvarimo niz možnih znakov, namesto List<char>
+            // Promjena umjesto List stavljen Array
             char[] moguciZnakovi = new char[0];
 
             if (velikaSlova)
@@ -81,7 +81,7 @@ namespace UcenjeCS
                 Array.Copy(interpunkcijskiZnakoviSet.ToCharArray(), 0, moguciZnakovi, moguciZnakovi.Length - interpunkcijskiZnakoviSet.Length, interpunkcijskiZnakoviSet.Length);
             }
 
-            // Začetni del lozinke
+            // Početni dio lozinke
             if (pocinjeSBrojem)
             {
                 lozinka.Append(brojeviSet[random.Next(brojeviSet.Length)]);
@@ -93,7 +93,7 @@ namespace UcenjeCS
                 duzina--;
             }
 
-            // Generiranje preostalega dela lozinke
+            // Generiranje preostaleg dijela lozinke
             for (int i = lozinka.Length; i < duzina; i++)
             {
                 char noviZnak;
@@ -105,7 +105,7 @@ namespace UcenjeCS
                 lozinka.Append(noviZnak);
             }
 
-            // Zaključni del lozinke
+            // Zaključni dio lozinke
             if (zavrsavaSBrojem)
             {
                 lozinka.Append(brojeviSet[random.Next(brojeviSet.Length)]);
