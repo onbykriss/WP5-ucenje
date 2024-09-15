@@ -37,7 +37,7 @@ namespace UcenjeCS.E18KonzolnaAplikacija
 
         private void OdabirOpcijeIzbornika()
         {
-            switch (Pomocno.UcitajRasponBroja("Odaberite stavku izbornika", 1, 6))
+            switch (Pomocno.UcitajRasponBroja("Odaberite stavku izbornika", 1, 5))
             {
                 case 1:
                     PrikaziSmjerove();

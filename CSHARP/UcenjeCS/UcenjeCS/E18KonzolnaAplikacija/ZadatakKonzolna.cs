@@ -16,7 +16,5 @@
 
 
         // nakon toga riješiti sve ove zadatke na svojoj aplikaciji (sadržajno prilagoditi svojim entitetima)
-
-
     }
 }

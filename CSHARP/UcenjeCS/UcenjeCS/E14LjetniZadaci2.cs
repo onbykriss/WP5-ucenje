@@ -24,11 +24,11 @@ namespace UcenjeCS
             // Ispis slova i učestalosti
             PrikaziSlovaIUcestalost(spojenaImena, brojac);
 
-            // Kreiraj listu brojeva
-            var brojevi = PretvoriUListuBrojeva(spojenaImena, brojac);
+            // Kreiraj niz brojeva
+            int[] brojevi = PretvoriUNizBrojeva(spojenaImena, brojac);
 
             // Zbrajanje brojeva po pravilima
-            List<int> rezultat = ZbrajajBrojeve(brojevi);
+            int[] rezultat = ZbrajajBrojeve(brojevi);
 
             Console.WriteLine("Ljubavni postotak između imena " + ime1 + " i " + ime2 + " je: " + rezultat[0] + rezultat[1] + "%");
         }
@@ -65,17 +65,18 @@ namespace UcenjeCS
         // Funkcija za formatiranje učestalosti slova u string
         static string FormatUcestalost(Dictionary<char, int> brojac, string tekst, int sirinaKolone)
         {
-            var ucestalosti = new List<string>();
+            var ucestalosti = new string[tekst.Length];
 
-            foreach (var slovo in tekst)
+            for (int i = 0; i < tekst.Length; i++)
             {
+                char slovo = tekst[i];
                 if (brojac.ContainsKey(slovo))
                 {
-                    ucestalosti.Add(brojac[slovo].ToString().PadLeft(sirinaKolone));
+                    ucestalosti[i] = brojac[slovo].ToString().PadLeft(sirinaKolone);
                 }
                 else
                 {
-                    ucestalosti.Add(" ".PadLeft(sirinaKolone));
+                    ucestalosti[i] = " ".PadLeft(sirinaKolone);
                 }
             }
 
@@ -94,31 +95,36 @@ namespace UcenjeCS
             Console.WriteLine(FormatUcestalost(brojac, tekst, sirinaKolone));
         }
 
-        // Funkcija za pretvaranje učestalosti slova u listu brojeva
-        static List<int> PretvoriUListuBrojeva(string tekst, Dictionary<char, int> brojac)
+        // Funkcija za pretvaranje učestalosti slova u niz brojeva
+        static int[] PretvoriUNizBrojeva(string tekst, Dictionary<char, int> brojac)
         {
-            var brojevi = new List<int>();
+            int[] brojevi = new int[tekst.Length];
+            int index = 0;
 
             foreach (var slovo in tekst)
             {
                 if (brojac.ContainsKey(slovo))
                 {
-                    brojevi.Add(brojac[slovo]);
+                    brojevi[index++] = brojac[slovo];
                 }
             }
+
+            // Smanjimo niz na stvarnu veličinu  (Array)
+            Array.Resize(ref brojevi, index);
 
             return brojevi;
         }
 
         // Funkcija za zbrajanje brojeva prema pravilima (prvi s zadnjim, drugi s predzadnjim...)
-        static List<int> ZbrajajBrojeve(List<int> brojevi)
+        static int[] ZbrajajBrojeve(int[] brojevi)
         {
-            while (brojevi.Count > 2)
+            while (brojevi.Length > 2)
             {
-                List<int> noviBrojevi = new List<int>();
+                int[] noviBrojevi = new int[brojevi.Length];
 
                 int start = 0;
-                int end = brojevi.Count - 1;
+                int end = brojevi.Length - 1;
+                int index = 0;
 
                 // Zbrajanje prvog i zadnjeg, drugog i predzadnjeg, itd.
                 while (start < end)
@@ -128,12 +134,12 @@ namespace UcenjeCS
                     // Ako je zbroj dvocifren, razdvoji ga na znamenke
                     if (zbroj >= 10)
                     {
-                        noviBrojevi.Add(zbroj / 10);
-                        noviBrojevi.Add(zbroj % 10);
+                        noviBrojevi[index++] = zbroj / 10;
+                        noviBrojevi[index++] = zbroj % 10;
                     }
                     else
                     {
-                        noviBrojevi.Add(zbroj);
+                        noviBrojevi[index++] = zbroj;
                     }
 
                     start++;
@@ -143,11 +149,15 @@ namespace UcenjeCS
                 // Ako ima neparan broj brojeva, dodaj srednji broj
                 if (start == end)
                 {
-                    noviBrojevi.Add(brojevi[start]);
+                    noviBrojevi[index++] = brojevi[start];
                 }
+
+                // Smanjimo niz na stvarnu veličinu (Array)
+                Array.Resize(ref noviBrojevi, index);
 
                 // Prikaz svakog koraka
                 Console.WriteLine(string.Join(" ", noviBrojevi));
+
                 brojevi = noviBrojevi;
             }
 
