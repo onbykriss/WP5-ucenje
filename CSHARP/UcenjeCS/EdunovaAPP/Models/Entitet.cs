@@ -4,7 +4,7 @@ namespace EdunovaAPP.Models
 {
     public abstract class Entitet
     {
-        [Key] // dio EF ORM-a (EF = Entity framework), ORM = Object Relational Mapping
+        [Key] // dio EF ORM-a 
         public int? Sifra { get; set; }
     }
 }

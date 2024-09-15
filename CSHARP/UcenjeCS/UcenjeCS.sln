@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UcenjeCS", "UcenjeCS\UcenjeCS.csproj", "{E7D9F8D8-6E2F-4189-BAE8-D1E46D909C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{D7BC0A4B-2B35-4CA8-9DE1-7C6124B2EC92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{D7BC0A4B-2B35-4CA8-9DE1-7C6124B2EC92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdunovaAPP", "EdunovaAPP\EdunovaAPP.csproj", "{B449CFD2-061B-4E2D-9F95-A30524C10313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D7BC0A4B-2B35-4CA8-9DE1-7C6124B2EC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7BC0A4B-2B35-4CA8-9DE1-7C6124B2EC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7BC0A4B-2B35-4CA8-9DE1-7C6124B2EC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B449CFD2-061B-4E2D-9F95-A30524C10313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B449CFD2-061B-4E2D-9F95-A30524C10313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B449CFD2-061B-4E2D-9F95-A30524C10313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B449CFD2-061B-4E2D-9F95-A30524C10313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
