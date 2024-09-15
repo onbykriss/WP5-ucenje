@@ -9,10 +9,10 @@ namespace UcenjeCS
         public static void Izvedi()
         {
             // Unos imena
-            Console.WriteLine("Vpisi svoje ime:");
+            Console.WriteLine("Upisi svoje ime:");
             string ime1 = Console.ReadLine().ToUpper();
 
-            Console.WriteLine("Vpisi ime svoje simpatije:");
+            Console.WriteLine("Upisi ime svoje simpatije:");
             string ime2 = Console.ReadLine().ToUpper();
 
             // Spajanje imena
@@ -109,7 +109,7 @@ namespace UcenjeCS
                 }
             }
 
-            // Smanjimo niz na stvarnu veličinu  (Array)
+            // Smanjimo niz na stvarnu veličinu (Array)
             Array.Resize(ref brojevi, index);
 
             return brojevi;
