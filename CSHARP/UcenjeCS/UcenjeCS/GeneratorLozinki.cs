@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace UcenjeCS
 {
-    public class GeneratorLozinki 
+    public class GeneratorLozinki
     {
-
         public static void Izvedi()
         {
             Console.WriteLine("Unesite dužinu lozinke:");
@@ -61,13 +57,31 @@ namespace UcenjeCS
             StringBuilder lozinka = new StringBuilder();
             Random random = new Random();
 
-            List<char> moguciZnakovi = new List<char>();
+            // Ustvarimo niz možnih znakov, namesto List<char>
+            char[] moguciZnakovi = new char[0];
 
-            if (velikaSlova) moguciZnakovi.AddRange(velikaSlovaSet);
-            if (malaSlova) moguciZnakovi.AddRange(malaSlovaSet);
-            if (brojevi) moguciZnakovi.AddRange(brojeviSet);
-            if (interpunkcijskiZnakovi) moguciZnakovi.AddRange(interpunkcijskiZnakoviSet);
+            if (velikaSlova)
+            {
+                Array.Resize(ref moguciZnakovi, moguciZnakovi.Length + velikaSlovaSet.Length);
+                Array.Copy(velikaSlovaSet.ToCharArray(), 0, moguciZnakovi, moguciZnakovi.Length - velikaSlovaSet.Length, velikaSlovaSet.Length);
+            }
+            if (malaSlova)
+            {
+                Array.Resize(ref moguciZnakovi, moguciZnakovi.Length + malaSlovaSet.Length);
+                Array.Copy(malaSlovaSet.ToCharArray(), 0, moguciZnakovi, moguciZnakovi.Length - malaSlovaSet.Length, malaSlovaSet.Length);
+            }
+            if (brojevi)
+            {
+                Array.Resize(ref moguciZnakovi, moguciZnakovi.Length + brojeviSet.Length);
+                Array.Copy(brojeviSet.ToCharArray(), 0, moguciZnakovi, moguciZnakovi.Length - brojeviSet.Length, brojeviSet.Length);
+            }
+            if (interpunkcijskiZnakovi)
+            {
+                Array.Resize(ref moguciZnakovi, moguciZnakovi.Length + interpunkcijskiZnakoviSet.Length);
+                Array.Copy(interpunkcijskiZnakoviSet.ToCharArray(), 0, moguciZnakovi, moguciZnakovi.Length - interpunkcijskiZnakoviSet.Length, interpunkcijskiZnakoviSet.Length);
+            }
 
+            // Začetni del lozinke
             if (pocinjeSBrojem)
             {
                 lozinka.Append(brojeviSet[random.Next(brojeviSet.Length)]);
@@ -79,17 +93,19 @@ namespace UcenjeCS
                 duzina--;
             }
 
+            // Generiranje preostalega dela lozinke
             for (int i = lozinka.Length; i < duzina; i++)
             {
                 char noviZnak;
                 do
                 {
-                    noviZnak = moguciZnakovi[random.Next(moguciZnakovi.Count)];
+                    noviZnak = moguciZnakovi[random.Next(moguciZnakovi.Length)];
                 } while (!ponavljajuciZnakovi && lozinka.ToString().Contains(noviZnak));
 
                 lozinka.Append(noviZnak);
             }
 
+            // Zaključni del lozinke
             if (zavrsavaSBrojem)
             {
                 lozinka.Append(brojeviSet[random.Next(brojeviSet.Length)]);
@@ -101,9 +117,5 @@ namespace UcenjeCS
 
             return lozinka.ToString();
         }
-
-
     }
-
-
 }
