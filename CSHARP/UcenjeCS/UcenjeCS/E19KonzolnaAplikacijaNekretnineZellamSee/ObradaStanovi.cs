@@ -63,26 +63,11 @@ namespace UcenjeCS.E19KonzolnaAplikacijaNekretnineZellamSee
                     PrikaziIzbornik();
                     break;
                 case 5:
+                    ObrisiPostojeciStan();
+                    PrikaziIzbornik();
                     break;
-            }
-        }
-
-        private void PromjeniPostojeciStan()
-        {
-            PrikaziStanove();
-            var odabrani = Stanovi[Pomocno.UcitajRasponBroja("Odaberi redni broj stana za promjenu",
-                1, Stanovi.Count) - 1];
-
-            if (Pomocno.UcitajRasponBroja("1. Mjenjaš sve\n2. Pojedinačna promjena", 1, 2) == 1)
-            {
-                odabrani.Adresa = Pomocno.UcitajString("Unesi novu adresu", true);
-                odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
-                odabrani.Oprema = Pomocno.UcitajString("Unesi novu opremu", true);
-                odabrani.Slika = Pomocno.UcitajString("Unesi novu sliku", true);
-            }
-            else
-            {
-                odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
+                case 6:
+                    break;
             }
         }
 
@@ -115,13 +100,41 @@ namespace UcenjeCS.E19KonzolnaAplikacijaNekretnineZellamSee
 
         }
 
+        private void PromjeniPostojeciStan()
+        {
+            PrikaziStanove();
+            var odabrani = Stanovi[Pomocno.UcitajRasponBroja("Odaberi redni broj stana za promjenu",
+                1, Stanovi.Count) - 1];
+
+            if (Pomocno.UcitajRasponBroja("1. Mjenjaš sve\n2. Pojedinačna promjena", 1, 2) == 1)
+            {
+                odabrani.Idstana = Pomocno.UcitajRasponBroja("Unesi novi Idstana", 1, int.MaxValue);
+               // odabrani.Adresa = Pomocno.("Unesi novu adresu", true);
+                odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
+                //odabrani.Oprema = Pomocno.("Unesi novu opremu", true);
+               // odabrani.Slika = Pomocno.("Unesi novu sliku", true);
+            }
+            else
+            {
+                odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
+            }
+        }
+
+
+
+
+
+
+
+  
+
 
         private void UnosNovogStana()
         {
             Stanovi.Add(new()
             {
-                Sifra = E11Metode.UcitajCijeliBroj("Unesi adresu stana",1,int.MaxValue),
-                Adresa = Pomocno.UcitajString("Unesi adresu stana"),
+                Idstana = Pomocno.UcitajRasponBroja("Unesi adresu stana",1,int.MaxValue),
+               // Adresa = Pomocno.UcitajString("Unesi adresu stana"),
             });
         }
 
