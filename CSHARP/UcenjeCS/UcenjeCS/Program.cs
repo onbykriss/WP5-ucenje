@@ -1,6 +1,6 @@
 ﻿using UcenjeCS;
 
-new UcenjeCS.E19KConsoleApplicationRealEstateZellamSee.Menu();
+new UcenjeCS.E19KonzolnaAplikacijaNekretnineZellamSee.Izbornik();
 
 //new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
 

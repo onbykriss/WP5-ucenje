@@ -141,7 +141,7 @@ namespace UcenjeCS
             return suma;
         }
 
-        public static int UcitajCijeliBroj(string poruka = "Unesi broj", int min = 0, int max = 1000)
+        public static int UcitajCijeliBroj(string poruka = "Enter the number", int min = 0, int max = 1000)
         {
             int broj = 0;
 
@@ -153,7 +153,7 @@ namespace UcenjeCS
                     broj = int.Parse(Console.ReadLine());
                     if (broj < min || broj > max)
                     {
-                        Console.WriteLine("Broj mora biti u rasponu {0} i {1}", min, max);
+                        Console.WriteLine("The number must be in the range {0} and {1}", min, max);
                         continue;
                     }
                     return broj;
@@ -161,7 +161,7 @@ namespace UcenjeCS
                 catch
                 {
 
-                    Console.WriteLine("Nisi unio broj");
+                    Console.WriteLine("You haven't entered a number");
                 }
             }
         }
