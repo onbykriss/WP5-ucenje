@@ -109,13 +109,31 @@ namespace UcenjeCS.E19KonzolnaAplikacijaNekretnineZellamSee
             if (Pomocno.UcitajRasponBroja("1. Mjenjaš sve\n2. Pojedinačna promjena", 1, 2) == 1)
             {
                 odabrani.Idstana = Pomocno.UcitajRasponBroja("Unesi novi Idstana", 1, int.MaxValue);
-               // odabrani.Adresa = Pomocno.("Unesi novu adresu", true);
+                odabrani.Adresa = Pomocno.UcitajString("Unesi novu adresu", 100, true);
                 odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
-                //odabrani.Oprema = Pomocno.("Unesi novu opremu", true);
-               // odabrani.Slika = Pomocno.("Unesi novu sliku", true);
+                odabrani.Oprema = Pomocno.UcitajString("Unesi novu opremu", 100, true);
+                odabrani.Slika = Pomocno.UcitajString("Unesi novu sliku", 100, true);
             }
             else
             {
+                switch (E11Metode.UcitajCijeliBroj("1. Idstana\n2. Adresa\n3. Kvadratura\n4. Oprema\n5. Slika", 1, 5))
+                {
+                    case 1:
+                        odabrani.Idstana = Pomocno.UcitajRasponBroja("Unesi novi Idstana", 1, int.MaxValue);
+                        break;
+                    case 2:
+                        odabrani.Adresa = Pomocno.UcitajString("Unesi novu adresu", 100, true);
+                        break;
+                    case 3:
+                        odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
+                        break;
+                    case 4:
+                        odabrani.Oprema = Pomocno.UcitajString("Unesi novu opremu", 100, true);
+                        break;
+                    case 5:
+                        odabrani.Slika = Pomocno.UcitajString("Unesi novu sliku", 100, true);
+                        break;
+                }
                 odabrani.Kvadratura = E11Metode.UcitajCijeliBroj("Unesi novu kvadraturu", 1, int.MaxValue);
             }
         }
@@ -134,7 +152,7 @@ namespace UcenjeCS.E19KonzolnaAplikacijaNekretnineZellamSee
             Stanovi.Add(new()
             {
                 Idstana = Pomocno.UcitajRasponBroja("Unesi adresu stana",1,int.MaxValue),
-               // Adresa = Pomocno.UcitajString("Unesi adresu stana"),
+                Adresa = Pomocno.UcitajString("Unesi adresu stana", 100, true),
             });
         }
 
