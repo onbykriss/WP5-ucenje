@@ -1,17 +1,16 @@
-
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import NavBarEdunova from './components/NavBarEdunova';
 import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <>
-    <Container>
-       
-      aaaaaa
-    </Container>
+      <Container>
+      <NavBarEdunova/>
+        aaaaaaaaa
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
