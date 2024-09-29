@@ -1,12 +1,20 @@
-
+import { useEffect } from "react"
+import SmjerService from "../../services/SmjerService"
 
 
 export default function SmjeroviPregled(){
 
+async function dohvatiSmjerove(){
+    await SmjerService.get();
+}
 
-    return(
-        <>
-        Ovdje će doći pregled Smjerova...
-        </>
-    )
+useEffect(()=>{
+dohvatiSmjerove();
+}, [])
+
+return (
+<>
+Ovdje ce doci pregled smjerova
+</>
+)
 }
