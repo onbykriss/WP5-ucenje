@@ -3,7 +3,7 @@ export const RouteNames = {
 
     HOME: '/',
 
-    SMJER_PREGLED:'smjerovi'
+    STANOVI_PREGLED:'stanovi'
 }
 
 export const BACKEND_URL = 'https://kristinandric-001-site1.etempurl.com/api/v1'

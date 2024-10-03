@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../constants';
 
-export default function NavBarEdunova() {
+export default function NavBarNekretnine() {
 
    const navigate = useNavigate()
     
@@ -18,7 +18,7 @@ export default function NavBarEdunova() {
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand className='ruka'
-            onClick={()=>navigate(RouteNames.HOME)}>Edunova APP</Navbar.Brand>
+            onClick={()=>navigate(RouteNames.HOME)}>Nekretnine APP</Navbar.Brand>
             
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             
@@ -29,19 +29,19 @@ export default function NavBarEdunova() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Edunova App
+                  Nekretnine App
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="https://kristinandric-001-site1.etempurl.com/swagger/index.html" target="_blank">Swagger</Nav.Link>
-                  <NavDropdown title="Programi" id="basic-nav-dropdown">
+                  <NavDropdown title="Nekretnine" id="basic-nav-dropdown">
                     <NavDropdown.Item 
-                    onClick={()=>navigate(RouteNames.SMJER_PREGLED)} >Smjerovi</NavDropdown.Item>
+                    onClick={()=>navigate(RouteNames.STANOVI_PREGLED)} >Stanovi</NavDropdown.Item>
                     <NavDropdown.Item 
-                    href="#action/2">Polaznici</NavDropdown.Item>
+                    href="#action/2">Kvadratura</NavDropdown.Item>
                     <NavDropdown.Item 
-                    href="#action/3">Grupe</NavDropdown.Item></NavDropdown>
+                    href="#action/3">Adresa</NavDropdown.Item></NavDropdown>
                 </Nav>
                 <Form className="d-flex">
                 </Form>
