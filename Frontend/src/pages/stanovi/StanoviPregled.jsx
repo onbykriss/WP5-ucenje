@@ -41,7 +41,7 @@ export default function StanoviPregled() {
 
     return (
         <>
-            <Link to={RouteNames.STAN_NOVI} className="btn btn-success siroko">
+            <Link to={RouteNames.STANOVI_NOVI} className="btn btn-success siroko">
                 Dodaj novi stan
             </Link>
             <Table striped bordered hover responsive>

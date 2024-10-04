@@ -3,12 +3,45 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
+import { useEffect } from "react";
 
 export default function StanoviPromjena() {
+    
+    const [stan, setStan] = useState({});
     const navigate = useNavigate();
+    const routeParams = useParams();
+    
+    async function dohvatiStan() {
+        const odgovor = await StanoviService.getBySifra(routeParams.sifra);
+        if (odgovor.greska) {
+            alert(odgovor.poruka);
+            return;
+        }
+        setStan(odgovor.poruka);
+    }
+   
+    useEffect(() => {
+        dohvatiStan();
+    }, []);
 
-    function obradiSubmit(e) { // e je event
-        e.preventDefault(); // nemoj odraditi zahtjev na server
+    async function promjenaStan(stan) {
+        const odgovor = await StanoviService.promjena(routeParams.sifra, stan);
+        if (odgovor.greska) {
+            alert(odgovor.poruka);
+            return;
+        }
+        navigate(RouteNames.STANOVI_PREGLED);
+    }
+
+    function obradiSubmit(e) {
+        e.preventDefault();
+        let podaci = new FormData(e.target);
+        promjenaStan({
+            kvadratura: parseFloat(podaci.get('kvadratura')),
+            adresa: podaci.get('adresa'),
+            oprema: podaci.get('oprema'),
+            slika: podaci.get('slika')
+        });
     }
 
     return (

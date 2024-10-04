@@ -1,34 +1,34 @@
-import { useState } from "react";
+
 import StanoviService from "../../services/StanoviService";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
 export default function StanoviDodaj() {
-    const navigate = useNavigate();
-    const [formData, setFormData] = useState({
-        kvadratura: '',
-        adresa: '',
-        oprema: '',
-        slika: ''
-    });
 
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+    const navigate = useNavigate();
+
+    async function Dodaj(stan) {
+
+        //console.log(stan)
+        //console.log(JSON.stringify(stan))
+        const odgovor = await StanoviService.dodaj(stan)
+        if(odgovor.greska){
+            alert(odgovor.poruka)
+            return;
+        }
+        navigate(RouteNames.STANOVI_PREGLED)
     }
 
     async function obradiSubmit(e) {
         e.preventDefault();
-        const odgovor = await StanoviService.dodaj(formData);
-        if (odgovor.greska) {
-            alert(odgovor.poruka);
-            return;
-        }
-        navigate(RouteNames.STANOVI_PREGLED);
+        let podaci = new FormData(e.target)
+        Dodaj({
+            kvadratura: parseFloat(podaci.get('kvadratura')),
+            adresa: podaci.get('adresa'),
+            oprema: podaci.get('oprema'),
+            slika: podaci.get('slika')
+        })
     }
 
     return (
@@ -41,8 +41,6 @@ export default function StanoviDodaj() {
                         type="number"
                         step={0.01}
                         name="kvadratura"
-                        value={formData.kvadratura}
-                        onChange={handleChange}
                         required
                     />
                 </Form.Group>
@@ -52,8 +50,6 @@ export default function StanoviDodaj() {
                     <Form.Control
                         type="text"
                         name="adresa"
-                        value={formData.adresa}
-                        onChange={handleChange}
                         required
                     />
                 </Form.Group>
@@ -63,22 +59,20 @@ export default function StanoviDodaj() {
                     <Form.Control
                         type="text"
                         name="oprema"
-                        value={formData.oprema}
-                        onChange={handleChange}
                         required
                     />
                 </Form.Group>
 
                 <Row className="akcije">
                     <Col xs={6} sm={12} md={3} lg={6} xl={6} xxl={6}>
-                        <Link to={RouteNames.STANOVI_PREGLED} className="btn btn-danger siroko">
+                        <Link to={RouteNames.STANOVI_PREGLED} className="btn btn-danger">
                             Odustani
                         </Link>
                     </Col>
                     <Col xs={6} sm={12} md={3} lg={6} xl={6} xxl={6}>
-                        <Button type="submit" className="btn btn-success siroko">
-                            Dodaj
-                        </Button>
+                      <Button variant="success" type="submit" className="siroko">
+                         Dodaj stan
+                      </Button>
                     </Col>
                 </Row>
             </Form>
