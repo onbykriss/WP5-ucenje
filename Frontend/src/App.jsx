@@ -21,8 +21,8 @@ function App() {
 
         <Route path={RouteNames.STANOVI_PREGLED} element={<StanoviPregled/>}/>
         <Route path={RouteNames.STANOVI_NOVI} element={<StanoviDodaj/>}/>
-        <Route path={RouteNames.STANOVI_PROMJENA} element={<StanoviPromjena/>}/>
-
+        <Route path="/stan/:idstanovi" element={<StanoviPregled />} />
+        <Route path="/stanovi/promjena/:idstanovi" element={<StanoviPromjena />} />
       </Routes>
       <hr/>
       &copy; Nekretnine Zell am See 2024

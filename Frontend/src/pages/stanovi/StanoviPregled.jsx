@@ -4,10 +4,11 @@ import { Button, Table } from "react-bootstrap";
 import { NumericFormat } from "react-number-format";
 import moment from "moment";
 import { GrValidate } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
 export default function StanoviPregled() {
+    const navigate = useNavigate();
     const [stanovi, setStanovi] = useState([]);
 
     async function dohvatiStanovi() {
@@ -31,11 +32,13 @@ export default function StanoviPregled() {
     }
 
     async function brisanjeStanovi(sifra) {
+        console.log('Deleting property with ID:', sifra); // Debugging log
         const odgovor = await StanoviService.brisanje(sifra);
         if (odgovor.greska) {
             alert(odgovor.poruka);
             return;
         }
+        alert('Property deleted successfully');
         dohvatiStanovi();
     }
 
@@ -51,7 +54,7 @@ export default function StanoviPregled() {
                         <th>Adresa</th>
                         <th>Oprema</th>
                         <th>Slika</th>
-                    
+                        <th>Akcija</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,8 +67,11 @@ export default function StanoviPregled() {
                                 <img src={stan.slika} alt="Slika stana" style={{ width: '100px' }} />
                             </td>
                             <td>
-                                <Button variant="danger" onClick={() => obrisi(stan.sifra)}>
+                                <Button variant="danger" onClick={() => obrisi(stan.idstanovi)}>
                                     Obriši
+                                </Button>
+                                <Button variant="primary" onClick={() => navigate(`/stan/${stan.idstanovi}`)}>
+                                    Promjena
                                 </Button>
                             </td>
                         </tr>
