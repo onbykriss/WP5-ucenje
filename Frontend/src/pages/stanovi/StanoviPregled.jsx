@@ -67,9 +67,8 @@ export default function StanoviPregled() {
                                 <img src={stan.slika} alt="Slika stana" style={{ width: '100px' }} />
                             </td>
                             <td>
-                                <Button variant="danger" onClick={() => obrisi(stan.idstanovi)}>
-                                    Obriši
-                                </Button>
+                                <Button variant="danger" onClick={() => obrisi(stan.idstanovi)}>Obriši</Button>
+                                &nbsp;&nbsp;&nbsp;
                                 <Button variant="primary" onClick={() => navigate(`/stanovi/promjena/${stan.idstanovi}`)}>Promjena</Button>
                             </td>
                         </tr>
