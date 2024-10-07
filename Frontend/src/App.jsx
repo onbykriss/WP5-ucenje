@@ -19,9 +19,8 @@ function App() {
       <Routes>
         <Route path={RouteNames.HOME} element={<Pocetna/>} />
 
-        <Route path={RouteNames.STANOVI_PREGLED} element={<StanoviPregled/>}/>
-        <Route path={RouteNames.STANOVI_NOVI} element={<StanoviDodaj/>}/>
-        <Route path="/stan/:idstanovi" element={<StanoviPregled />} />
+        <Route path={RouteNames.STANOVI_PREGLED} element={<StanoviPregled />} />
+        <Route path={RouteNames.STANOVI_NOVI} element={<StanoviDodaj />} />
         <Route path="/stanovi/promjena/:idstanovi" element={<StanoviPromjena />} />
       </Routes>
       <hr/>

@@ -70,9 +70,7 @@ export default function StanoviPregled() {
                                 <Button variant="danger" onClick={() => obrisi(stan.idstanovi)}>
                                     Obriši
                                 </Button>
-                                <Button variant="primary" onClick={() => navigate(`/stan/${stan.idstanovi}`)}>
-                                    Promjena
-                                </Button>
+                                <Button variant="primary" onClick={() => navigate(`/stanovi/promjena/${stan.idstanovi}`)}>Promjena</Button>
                             </td>
                         </tr>
                     ))}
